@@ -1,0 +1,39 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #ffffff;
+}
+header {
+  height: 700px;
+  background-color: #e9ded4;
+  display: inline-block;
+  width: 100%;
+}
+.header_main_container {
+  width: 1200px;
+  margin: 0 auto;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  margin-top: 26px;
+}
+.logopng_container {
+  display: flex;
+  column-gap: 1px;
+}
+.logopng {
+  width: 22px;
+  height: 31px;
+}
+.logotxt_container {
+  font-family: "Golos Text";
+  font-weight: 700;
+  font-size: 16.65px;
+  line-height: 18px;
+  text-transform: uppercase;
+  color: #595653;
+  margin-left: 9px;
+}
