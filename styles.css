@@ -468,6 +468,8 @@ header {
 .step_sub_back {
   position: absolute;
   top: 0px;
+  height: 100%;
+  width: 100%;
   mix-blend-mode: color-burn;
   pointer-events: none;
 }
