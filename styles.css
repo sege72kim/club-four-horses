@@ -5,6 +5,8 @@ html {
   box-sizing: border-box;
   background-color: #ffffff;
 }
+
+/* Шапка */
 header {
   height: 700px;
   background-color: #e9ded4;
@@ -198,6 +200,7 @@ header {
   z-index: 2;
   mix-blend-mode: overlay;
 }
+/* Бегущая строка */
 .marquee {
   background-color: #f54932;
   height: 60px;
@@ -207,6 +210,16 @@ header {
   overflow: hidden;
   align-items: center;
   margin-top: -4px;
+}
+.marquee_2 {
+  background-color: #f54932;
+  height: 60px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  margin-top: 140px;
 }
 .marquee_container {
   display: flex;
@@ -242,10 +255,13 @@ header {
     transform: translateX(-110%);
   }
 }
+
+/* Section 1 */
 .support {
   margin: 0 auto;
   width: 1222px;
   margin-top: 80px;
+  padding: 0;
 }
 .support_container_1 {
   display: flex;
@@ -345,4 +361,153 @@ header {
   width: 528px;
   pointer-events: none;
   mix-blend-mode: color-burn;
+}
+.rub100 {
+  text-decoration-line: line-through;
+  text-decoration-style: solid;
+  text-decoration-color: #f54932;
+  text-decoration-thickness: 2px;
+}
+
+/* Section 2 */
+.steps {
+  width: 1222px;
+  margin: 0 auto;
+  padding: 0;
+}
+.steps_title {
+  padding: 0;
+  margin-top: 100px;
+}
+.steps_title_1 {
+  font-family: "Merriweather";
+  font-weight: 400;
+  font-size: 54px;
+  color: #313131;
+  text-transform: uppercase;
+}
+.steps_title_2 {
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+}
+.steps_title_3 {
+  font-family: "Merriweather";
+  font-weight: 400;
+  font-size: 54px;
+  color: #313131;
+  text-transform: uppercase;
+}
+.steps_title_4 {
+  font-family: "Golos Text";
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  color: #3057a2;
+  width: 280px;
+}
+.step_blocks_container {
+  margin-top: 54px;
+  row-gap: 20px;
+  position: relative;
+}
+.step_blocks_1 {
+  column-gap: 20px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.step_blocks_2 {
+  column-gap: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.steps_1_2,
+.steps_4_5 {
+  margin-bottom: 20px;
+  column-gap: 20px;
+  display: flex;
+  align-items: center;
+}
+.step_1,
+.step_2,
+.step_4,
+.step_5 {
+  width: 394px;
+  height: 112px;
+}
+.step_3 {
+  width: 394px;
+  height: 244px;
+  margin-bottom: 20px;
+}
+.step_6 {
+  width: 394px;
+  height: 136px;
+}
+.step_7 {
+  width: 808px;
+  height: 136px;
+}
+.step_1,
+.step_2,
+.step_3,
+.step_4,
+.step_5,
+.step_6,
+.step_7 {
+  background-image: url("./sub_background_3.png");
+  font-family: "Golos Text";
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: #313131;
+  display: flex;
+}
+
+.step_number {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+.step_text {
+  width: 302px;
+  margin-top: 20px;
+  margin-left: 16px;
+}
+.step_text_7 {
+  width: 446px;
+  margin-top: 20px;
+  margin-left: 16px;
+}
+.plane_img {
+  position: absolute;
+  width: 400px;
+  height: 240px;
+  top: 166px;
+  right: -62px;
+}
+footer {
+  background-color: #e9ded4;
+  height: 150px;
+  width: 100%;
+}
+footer div {
+  margin: 0 auto;
+  padding-top: 40px;
+  max-width: 1222px;
+  color: #313131;
+  opacity: 60%;
+  font-family: "Golos Text";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
 }
