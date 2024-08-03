@@ -1,3 +1,7 @@
+function scrollToSection(sectionId) {
+  const section = document.getElementById(sectionId);
+  section.scrollIntoView({ behavior: "smooth" });
+}
 let currentIndex = 0;
 
 function showSlide(index) {
@@ -25,5 +29,7 @@ function nextSlide() {
 function prevSlide() {
   showSlide(currentIndex - 1);
 }
-
+setInterval(() => {
+  nextSlide();
+}, 4000);
 showSlide(currentIndex);
