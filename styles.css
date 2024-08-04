@@ -4,6 +4,9 @@ html {
   padding: 0;
   box-sizing: border-box;
   background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 /* Шапка */
@@ -13,7 +16,6 @@ header {
   display: inline-block;
   position: relative;
   width: 100%;
-  min-width: 1300px;
   overflow: hidden;
 }
 .header_main_container {
@@ -52,7 +54,6 @@ header {
   font-size: 60px;
   line-height: 66px;
   color: #313131;
-
   margin-top: 62px;
 }
 .first_header_text_main {
@@ -81,7 +82,6 @@ header {
   font-size: 16px;
   line-height: 21px;
   text-align: center;
-  color: #1f1f1f;
   border-radius: 66px;
   height: 72px;
   background-color: #1f1f1f;
@@ -89,6 +89,10 @@ header {
   width: 263px;
   transition: all 0.3s ease-out;
   z-index: 6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .header_button_1:hover {
   background-color: #fbce51;
@@ -97,6 +101,10 @@ header {
 }
 
 .header_button_2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
   font-family: "Golos Text";
   font-weight: 500;
@@ -104,6 +112,7 @@ header {
   line-height: 21px;
   text-align: center;
   color: #1f1f1f;
+  z-index: 6;
   border-radius: 66px;
   height: 72px;
   border: 2px #1f1f1f solid;
@@ -117,19 +126,17 @@ header {
 }
 .header_composition_container {
   position: absolute;
-  width: 1630px;
   height: 100%;
-  margin: 0 auto;
-  left: 0;
-  right: 0;
+  width: 100%;
   top: 0;
-  overflow: hidden;
+
   pointer-events: none;
 }
-@media (max-width: 1366px) {
-  .header_composition_container {
-    left: -140px;
-  }
+.header_composition {
+  margin: 0 auto;
+  height: 100%;
+  width: 1630px;
+  position: relative;
 }
 .chess_piece_1 {
   position: absolute;
@@ -162,7 +169,7 @@ header {
 }
 .city_picture_back {
   position: absolute;
-  bottom: 0;
+  top: 248px;
   left: 0;
   width: 1623px;
   height: 452px;
@@ -170,7 +177,7 @@ header {
 }
 .city_picture {
   position: absolute;
-  bottom: 0;
+  top: 248px;
   left: 20px;
   width: 1623px;
   height: 452px;
@@ -206,7 +213,6 @@ header {
   background-color: #f54932;
   height: 60px;
   width: 100%;
-  min-width: 1300px;
   margin: 0 auto;
   display: flex;
   overflow: hidden;
@@ -216,7 +222,6 @@ header {
 .marquee_2 {
   background-color: #f54932;
   height: 60px;
-  min-width: 1300px;
   width: 100%;
   margin: 0 auto;
   display: flex;
@@ -267,18 +272,47 @@ header {
   padding: 0;
 }
 .support_container_1 {
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr 1fr;
   justify-content: space-between;
+  white-space: pre-wrap;
+  margin-bottom: -450px;
 }
-.sup_container_1_text {
+.sup_container_1_text_1,
+.sup_container_1_text_2 {
   font-family: "Merriweather";
   text-transform: uppercase;
   font-weight: 400;
   font-size: 36px;
-  max-width: 764px;
 }
+.sup_container_1_text_1 {
+  margin-top: 35px;
+  grid-column: 1;
+  grid-row: 1;
+  width: 764px;
+}
+.sup_container_1_text_2 {
+  margin-top: 35px;
+  grid-column: 1;
+  grid-row: 1;
+  width: 850px;
+  margin-left: -110px;
+}
+.sup_container_1_text_2_1 {
+  text-align: end;
+}
+.sup_container_1_text_2_2 {
+  margin-top: -134px;
+  color: #f54932;
+  font-weight: 700;
+  text-align: start;
+}
+
 .sup_container_1_img {
+  margin-left: 60px;
+  grid-column: 2;
+  grid-row: 1 / 3;
   height: 250px;
   width: 394px;
 }
@@ -290,6 +324,8 @@ header {
   height: 615px;
   width: 474px;
   margin-top: 35px;
+  position: relative;
+  background: none;
 }
 .sup_container_2 {
   margin-left: 17px;
@@ -358,13 +394,13 @@ header {
 }
 .sup_container_2_img_back {
   position: absolute;
-  top: 1107px;
   z-index: 4;
   height: 609px;
   width: 528px;
   pointer-events: none;
   mix-blend-mode: color-burn;
 }
+
 .rub100 {
   text-decoration-line: line-through;
   text-decoration-style: solid;
@@ -414,6 +450,7 @@ header {
   row-gap: 20px;
   position: relative;
 }
+
 .step_blocks_1 {
   column-gap: 20px;
   display: flex;
@@ -467,6 +504,23 @@ header {
   line-height: 24px;
   color: #313131;
   display: flex;
+  position: relative;
+}
+.step_1::before,
+.step_2::before,
+.step_3::before,
+.step_4::before,
+.step_5::before,
+.step_6::before,
+.step_7::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("./sub_background.png") center/cover no-repeat;
+  mix-blend-mode: color-burn;
 }
 .step_sub_back {
   position: absolute;
@@ -650,15 +704,647 @@ footer div {
 .next:hover {
   background-color: #fbce51;
 }
-@media (max-width: 1222px) {
-  .members,
-  .support,
-  .steps,
-  header,
-  .marquee,
-  .marquee_2,
-  footer {
-    transform: scale(0.8);
+@media (max-width: 1300px) {
+  .header_composition {
+    margin-left: -100px;
+  }
+}
+@media (max-width: 1350px) {
+  main {
+    transform: scale(0.9);
+    transform-origin: top;
+  }
+  header {
+    transform: scale(0.9);
     transform-origin: top left;
+    height: 700px;
+    width: 111%;
+  }
+
+  .sup_container_2_img_back {
+    display: none;
+  }
+  footer div {
+    width: 1100px;
+  }
+  .marquee {
+    margin-top: -70px;
+  }
+  .marquee_2 {
+    margin-top: -100px;
+  }
+}
+@media (max-width: 1200px) {
+  .header_composition {
+    margin-left: -170px;
+  }
+  main {
+    transform: scale(0.7);
+    transform-origin: top;
+  }
+  header {
+    transform: scale(0.7);
+    transform-origin: top left;
+    height: 700px;
+    width: 143%;
+  }
+  .sup_container_2_img_back {
+    display: none;
+  }
+  footer div {
+    width: 855px;
+  }
+  .marquee {
+    margin-top: -210px;
+  }
+  .marquee_2 {
+    margin-top: -650px;
+  }
+  .header_composition_container {
+    margin-left: 170px;
+  }
+}
+@media (max-width: 1080px) {
+  .header_composition {
+    margin-left: -100px;
+  }
+  main {
+    transform: scale(0.6);
+    transform-origin: top;
+    margin-right: 220px;
+  }
+  header {
+    transform: scale(0.6);
+    transform-origin: top left;
+    height: 700px;
+    width: 167%;
+  }
+  .sup_container_2_img_back {
+    display: none;
+  }
+
+  footer div {
+    width: 733px;
+  }
+  .marquee {
+    margin-top: -280px;
+  }
+  .marquee_2 {
+    margin-top: -900px;
+  }
+}
+@media (max-width: 900px) {
+  /* Шапка */
+  main {
+    transform: scale(1);
+    transform-origin: top;
+    margin-right: 0px;
+  }
+  header {
+    transform: scale(1);
+    transform-origin: top;
+    height: 775px;
+    width: 100%;
+  }
+  .header_main_container {
+    width: 335px;
+    margin: 0 auto;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    margin-top: 18px;
+  }
+  .logopng {
+    width: 19px;
+    height: 27px;
+  }
+  .logotxt_container {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 15px;
+  }
+  .header_text_container {
+    width: 335px;
+  }
+  .header_text_main {
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 40px;
+    margin-top: 40px;
+  }
+
+  .header_text_sub {
+    text-align: start;
+    margin-top: 24px;
+  }
+  .header_buttons {
+    margin-top: 32px;
+    flex-direction: column;
+  }
+  .header_button_1 {
+    height: 47px;
+    width: 335px;
+    flex-direction: row;
+    column-gap: 5px;
+  }
+  .header_button_1:hover {
+    background-color: #fbce51;
+    color: #1f1f1f;
+    border: 0px;
+  }
+  .header_button_2 {
+    margin-top: 14px;
+    column-gap: 5px;
+    flex-direction: row;
+    border: none;
+    background-color: white;
+    height: 47px;
+    width: 335px;
+  }
+  .header_composition_container {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    transform: scale(0.54);
+    transform: bottom;
+  }
+  .header_composition {
+    margin-top: 400px;
+    margin-left: -900px;
+    height: 100%;
+  }
+  .sun_round {
+    width: 550px;
+    height: 550px;
+    top: 30px;
+    right: 280px;
+  }
+  .sun_round_text {
+    height: 550px;
+    top: 70px;
+    right: 240px;
+  }
+
+  .chess_piece_1 {
+    display: none;
+  }
+  .chess_piece_2 {
+    top: 480px;
+    right: 410px;
+    height: 224px;
+  }
+  .chess_piece_3 {
+    top: 275px;
+    right: 660px;
+    height: 214px;
+  }
+  .chess_piece_4 {
+    transform: rotate(8deg);
+    top: 190px;
+    right: 350px;
+    height: 192px;
+  }
+  /* Бегущая строка */
+  .marquee {
+    height: 38px;
+    margin-top: 0px;
+  }
+  .marquee_2 {
+    height: 38px;
+    margin-top: 0px;
+  }
+  .sup_container_2_img_back {
+    display: block;
+  }
+
+  .marquee-text {
+    font-size: 16px;
+  }
+  .sup_container_2_img_back {
+    display: none;
+  }
+  /* Section 1 */
+  .support {
+    margin: 0 auto;
+    width: 335px;
+    margin-top: 48px;
+  }
+  .support_container_1 {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr 1fr;
+    justify-content: space-between;
+    white-space: pre-wrap;
+    margin-bottom: 0px;
+    margin-top: -40px;
+  }
+  .sup_container_1_text_1,
+  .sup_container_1_text_2 {
+    font-weight: 400;
+    font-size: 28px;
+  }
+  .sup_container_1_text_1 {
+    margin-top: 35px;
+    grid-column: 1;
+    grid-row: 1;
+    width: 335px;
+  }
+  .sup_container_1_text_2 {
+    margin-top: -54px;
+    grid-column: 1;
+    grid-row: 3;
+    width: 335px;
+    margin-left: 0px;
+  }
+  .sup_container_1_text_2_1 {
+    text-align: start;
+  }
+  .sup_container_1_text_2_2 {
+    margin-top: -134px;
+    color: #f54932;
+    font-weight: 700;
+    text-align: start;
+  }
+
+  .sup_container_1_img {
+    margin-top: -9px;
+    margin-left: 0px;
+    grid-column: 1;
+    grid-row: 2;
+    height: 212px;
+    width: 335px;
+  }
+  .support_container_2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .sup_container_2_img {
+    margin-left: -20px;
+    height: 440px;
+    width: 375px;
+    margin-top: -80px;
+    position: relative;
+    background: none;
+  }
+  .sup_container_2 {
+    margin-left: 17px;
+  }
+  .sup_container_2_text {
+    font-weight: 400;
+    font-size: 28px;
+    margin-top: -40px;
+  }
+  .sup_container_2_table {
+    margin-top: 50px;
+  }
+  .table_line,
+  .table_line2 {
+    display: flex;
+    flex-direction: column;
+    max-width: 375px;
+  }
+  .table_line {
+    border-bottom: 2px #d0d0d0 solid;
+  }
+  .table_column_1,
+  .table_column_3,
+  .table_column_5 {
+    width: 375px;
+    border-right: 0px #d0d0d0 solid;
+  }
+  .table_column_2,
+  .table_column_4,
+  .table_column_6 {
+    margin-left: 0px;
+  }
+  .table_column_1,
+  .table_column_2 {
+    padding: 6px 0;
+  }
+  .table_column_1 {
+    padding-top: 16px;
+  }
+  .table_column_2 {
+    padding-bottom: 16px;
+  }
+  .table_column_5 {
+    padding-top: 16px;
+  }
+  .table_column_6 {
+    padding-top: 12px;
+  }
+  .table_column_4 {
+    padding-bottom: 16px;
+  }
+  .table_column_3 {
+    padding-bottom: 12px;
+  }
+  .sup_container_2_text_sub {
+    font-size: 18px;
+    margin-top: 40px;
+  }
+
+  /* Section 2 */
+  .steps {
+    width: 335px;
+    margin: 0 auto;
+    padding: 0;
+  }
+  .steps_title {
+    padding: 0;
+    margin-top: 100px;
+  }
+  .steps_title_1 {
+    font-family: "Merriweather";
+    font-weight: 400;
+    font-size: 54px;
+    color: #313131;
+    text-transform: uppercase;
+  }
+  .steps_title_2 {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+  }
+  .steps_title_3 {
+    font-family: "Merriweather";
+    font-weight: 400;
+    font-size: 54px;
+    color: #313131;
+    text-transform: uppercase;
+  }
+  .steps_title_4 {
+    font-family: "Golos Text";
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    color: #3057a2;
+    width: 280px;
+  }
+  .step_blocks_container {
+    margin-top: 54px;
+    row-gap: 20px;
+    position: relative;
+  }
+
+  .step_blocks_1 {
+    column-gap: 20px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  .step_blocks_2 {
+    column-gap: 20px;
+    display: flex;
+    align-items: center;
+  }
+
+  .steps_1_2,
+  .steps_4_5 {
+    margin-bottom: 20px;
+    column-gap: 20px;
+    display: flex;
+    align-items: center;
+  }
+  .step_1,
+  .step_2,
+  .step_4,
+  .step_5 {
+    width: 394px;
+    height: 112px;
+  }
+  .step_3 {
+    width: 394px;
+    height: 244px;
+    margin-bottom: 20px;
+  }
+  .step_6 {
+    width: 394px;
+    height: 136px;
+  }
+  .step_7 {
+    width: 808px;
+    height: 136px;
+  }
+  .step_1,
+  .step_2,
+  .step_3,
+  .step_4,
+  .step_5,
+  .step_6,
+  .step_7 {
+    background-image: url("./sub_background_3.png");
+    font-family: "Golos Text";
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: #313131;
+    display: flex;
+    position: relative;
+  }
+  .step_1::before,
+  .step_2::before,
+  .step_3::before,
+  .step_4::before,
+  .step_5::before,
+  .step_6::before,
+  .step_7::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("./sub_background.png") center/cover no-repeat;
+    mix-blend-mode: color-burn;
+  }
+  .step_sub_back {
+    position: absolute;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    mix-blend-mode: color-burn;
+    pointer-events: none;
+  }
+  .step_number {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+  .step_text {
+    width: 302px;
+    margin-top: 20px;
+    margin-left: 16px;
+  }
+  .step_text_7 {
+    width: 446px;
+    margin-top: 20px;
+    margin-left: 16px;
+  }
+  .plane_img {
+    position: absolute;
+    width: 390px;
+    height: 240px;
+    top: 166px;
+    right: -52px;
+  }
+  footer {
+    background-color: #e9ded4;
+    height: 150px;
+    width: 100%;
+  }
+  footer div {
+    margin: 0 auto;
+    padding-top: 40px;
+    max-width: 1222px;
+    color: #313131;
+    opacity: 60%;
+    font-family: "Golos Text";
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  /* Section 3 */
+  .members {
+    width: 1222px;
+    margin: 0 auto;
+    margin-top: 200px;
+  }
+
+  .members_title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .members_text {
+    font-family: "Merriweather";
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 54px;
+    color: #313131;
+  }
+  .members_buttons {
+    display: flex;
+    align-items: center;
+  }
+  .indicator {
+    display: flex;
+    align-items: center;
+    margin-left: 14px;
+    margin-right: 16px;
+    column-gap: 2px;
+    font-family: "Golos Text";
+    font-weight: 400;
+    font-size: 16px;
+    color: #313131;
+  }
+  .slash,
+  .totalSlides {
+    opacity: 60%;
+  }
+  .prev,
+  .next {
+    background-color: #313131;
+    color: white;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+  }
+  .prev img {
+    margin-right: 4px;
+  }
+  .next img {
+    margin-left: 4px;
+  }
+  .slider {
+    overflow: hidden;
+    margin-top: 60px;
+  }
+
+  .slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .slide {
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    column-gap: 20px;
+  }
+
+  .slide_item {
+    width: 394px;
+
+    border-radius: 10px;
+  }
+  .member_photo {
+    width: 320px;
+    height: 320px;
+    margin-left: 37px;
+  }
+  .member_name {
+    font-family: "Golos Text";
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 29px;
+    text-align: center;
+    margin-top: 28px;
+  }
+  .member_info {
+    font-family: "Golos Text";
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: center;
+    opacity: 60%;
+    margin-top: 6px;
+  }
+  .more_button {
+    font-family: "Golos Text";
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19.2px;
+    text-align: center;
+    color: #3057a2;
+    border: 1px #3057a2 solid;
+    border-radius: 62px;
+    width: 113px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  .more_button:hover {
+    background-color: #3057a2;
+    color: white;
+  }
+  .prev:hover,
+  .next:hover {
+    background-color: #fbce51;
+  }
+  .steps,
+  .members {
+    display: none;
   }
 }
