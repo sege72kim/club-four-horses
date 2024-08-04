@@ -163,41 +163,22 @@
           </div>
         </div>
         <div class="step_blocks_container">
-          <div class="step_blocks_1">
-            <div class="step_block_1">
-              <div class="steps_1_2">
-                <div class="step_1">
-                  <div class="step_number">1</div>
-                  <div class="step_text">
-                    Строительство железнодорожной магистрали Москва-Васюки
-                  </div>
-                </div>
-                <div class="step_2">
-                  <div class="step_number">2</div>
-                  <div class="step_text">
-                    Открытие фешенебельной гостиницы «Проходная пешка» и других
-                    небоскрёбов
-                  </div>
-                </div>
+          <div class="step_blocks_container_div">
+            <div class="step a">
+              <div class="step_number">1</div>
+              <div class="step_text">
+                Строительство железнодорожной магистрали Москва-Васюки
               </div>
-              <div class="steps_4_5">
-                <div class="step_4">
-                  <div class="step_number">4</div>
-                  <div class="step_text">
-                    Строительство дворца
-                    <div>для турнира</div>
-                  </div>
-                </div>
-                <div class="step_5">
-                  <div class="step_number">5</div>
-                  <div class="step_text">
-                    Размещение гаражей для гостевого автотранспорта
-                  </div>
-                </div>
+            </div>
+            <div class="step b">
+              <div class="step_number">2</div>
+              <div class="step_text">
+                Открытие фешенебельной гостиницы «Проходная пешка» и других
+                небоскрёбов
               </div>
             </div>
 
-            <div class="step_3">
+            <div class="step c">
               <div class="step_number">3</div>
               <div class="step_text">
                 Поднятие сельского хозяйства в радиусе
@@ -205,16 +186,29 @@
                 производство овощей, фруктов, икры, шоколадных конфет
               </div>
             </div>
-          </div>
-          <div class="step_blocks_2">
-            <div class="step_6">
+            <div class="step d">
+              <div class="step_number">4</div>
+              <div class="step_text">
+                Строительство дворца
+                <div>для турнира</div>
+              </div>
+            </div>
+            <div class="step e">
+              <div class="step_number">5</div>
+              <div class="step_text">
+                Размещение гаражей
+                <div>для гостевого</div>
+                <div>автотранспорта</div>
+              </div>
+            </div>
+            <div class="step f">
               <div class="step_number">6</div>
               <div class="step_text">
                 Постройка сверхмощной радиостанции для передачи всему миру
                 сенсационных результатов
               </div>
             </div>
-            <div class="step_7">
+            <div class="step g">
               <div class="step_number">7</div>
               <div class="step_text_7">
                 Создание аэропорта «Большие Васюки»
@@ -226,11 +220,25 @@
           </div>
           <img class="plane_img" src="plane.png" alt="" />
         </div>
+        <div class="slider_step">
+          <div class="slider-container_step">
+            <div class="slides_step"></div>
+            <div class="slider_step_hood">
+              <div class="prev_step" onclick="prevSlide_step()">
+                <img src="./prev.svg" alt="" />
+              </div>
+              <div class="slider-dots"></div>
+              <div class="next_step" onclick="nextSlide_step()">
+                <img src="./next.svg" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
       <section class="members">
         <div class="members_title">
           <div class="members_text">Участники турнира</div>
-          <div class="members_buttons">
+          <div class="members_buttons" id="members_buttons">
             <div class="prev" onclick="prevSlide()">
               <img src="./prev.svg" alt="" />
             </div>
@@ -288,6 +296,7 @@
             </div>
           </div>
         </div>
+        <div class="members_buttons_2" id="members_buttons_2"></div>
       </section>
     </main>
     <div class="marquee_2">

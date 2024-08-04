@@ -446,57 +446,53 @@ header {
   width: 280px;
 }
 .step_blocks_container {
-  margin-top: 54px;
-  row-gap: 20px;
   position: relative;
+  margin-top: 54px;
+}
+.step_blocks_container_div {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto auto;
+  grid-template-areas:
+    "a b c"
+    "d e c"
+    "f g g";
+  gap: 20px;
 }
 
-.step_blocks_1 {
-  column-gap: 20px;
-  display: flex;
-  align-items: center;
-  width: 100%;
+.a {
+  grid-area: a;
 }
-.step_blocks_2 {
-  column-gap: 20px;
-  display: flex;
-  align-items: center;
+.b {
+  grid-area: b;
 }
-
-.steps_1_2,
-.steps_4_5 {
-  margin-bottom: 20px;
-  column-gap: 20px;
-  display: flex;
-  align-items: center;
+.c {
+  grid-area: c;
 }
-.step_1,
-.step_2,
-.step_4,
-.step_5 {
-  width: 394px;
+.d {
+  grid-area: d;
+  height: 244px;
+}
+.e {
+  grid-area: e;
+}
+.f {
+  grid-area: f;
+}
+.g {
+  grid-area: g;
+}
+.a,
+.b,
+.d,
+.e {
   height: 112px;
 }
-.step_3 {
-  width: 394px;
-  height: 244px;
-  margin-bottom: 20px;
-}
-.step_6 {
-  width: 394px;
+.g,
+.f {
   height: 136px;
 }
-.step_7 {
-  width: 808px;
-  height: 136px;
-}
-.step_1,
-.step_2,
-.step_3,
-.step_4,
-.step_5,
-.step_6,
-.step_7 {
+.step {
   background-image: url("./sub_background_3.png");
   font-family: "Golos Text";
   font-weight: 500;
@@ -506,13 +502,7 @@ header {
   display: flex;
   position: relative;
 }
-.step_1::before,
-.step_2::before,
-.step_3::before,
-.step_4::before,
-.step_5::before,
-.step_6::before,
-.step_7::before {
+.step::before {
   content: "";
   position: absolute;
   top: 0;
@@ -521,6 +511,7 @@ header {
   height: 100%;
   background: url("./sub_background.png") center/cover no-repeat;
   mix-blend-mode: color-burn;
+  z-index: 0;
 }
 .step_sub_back {
   position: absolute;
@@ -529,6 +520,9 @@ header {
   width: 100%;
   mix-blend-mode: color-burn;
   pointer-events: none;
+}
+.slider_step {
+  display: none;
 }
 .step_number {
   width: 36px;
@@ -554,10 +548,10 @@ header {
 }
 .plane_img {
   position: absolute;
-  width: 390px;
+  width: 350px;
   height: 240px;
-  top: 166px;
-  right: -52px;
+  top: 165px;
+  right: -40px;
 }
 footer {
   background-color: #e9ded4;
@@ -598,6 +592,9 @@ footer div {
 .members_buttons {
   display: flex;
   align-items: center;
+}
+.members_buttons_2 {
+  display: none;
 }
 .indicator {
   display: flex;
@@ -1058,145 +1055,152 @@ footer div {
     margin-top: 100px;
   }
   .steps_title_1 {
-    font-family: "Merriweather";
-    font-weight: 400;
-    font-size: 54px;
-    color: #313131;
-    text-transform: uppercase;
+    font-size: 36px;
+    line-height: 40px;
   }
   .steps_title_2 {
-    display: flex;
-    align-items: center;
-    column-gap: 20px;
+    align-items: start;
+    flex-direction: column;
+    column-gap: 0px;
+    margin-top: -2px;
   }
   .steps_title_3 {
-    font-family: "Merriweather";
-    font-weight: 400;
-    font-size: 54px;
-    color: #313131;
-    text-transform: uppercase;
+    font-size: 36px;
   }
   .steps_title_4 {
-    font-family: "Golos Text";
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 24px;
-    color: #3057a2;
-    width: 280px;
+    font-size: 18px;
+    line-height: 22px;
+    margin-top: 12px;
+    width: 335px;
+  }
+  .step_blocks_container div {
+    display: none;
   }
   .step_blocks_container {
-    margin-top: 54px;
-    row-gap: 20px;
-    position: relative;
+    margin-top: 148px;
+  }
+  .step {
+    font-size: 18px;
+    line-height: 21px;
+    background: none;
+    width: 335px;
+    padding-top: 42px;
   }
 
-  .step_blocks_1 {
-    column-gap: 20px;
-    display: flex;
-    align-items: center;
+  .slider_step {
+    display: block;
+  }
+  .slider-container_step {
+    position: relative;
     width: 100%;
+    overflow: hidden;
   }
-  .step_blocks_2 {
-    column-gap: 20px;
-    display: flex;
-    align-items: center;
-  }
-
-  .steps_1_2,
-  .steps_4_5 {
-    margin-bottom: 20px;
-    column-gap: 20px;
-    display: flex;
-    align-items: center;
-  }
-  .step_1,
-  .step_2,
-  .step_4,
-  .step_5 {
-    width: 394px;
-    height: 112px;
-  }
-  .step_3 {
-    width: 394px;
-    height: 244px;
-    margin-bottom: 20px;
-  }
-  .step_6 {
-    width: 394px;
-    height: 136px;
-  }
-  .step_7 {
-    width: 808px;
-    height: 136px;
-  }
-  .step_1,
-  .step_2,
-  .step_3,
-  .step_4,
-  .step_5,
-  .step_6,
-  .step_7 {
-    background-image: url("./sub_background_3.png");
-    font-family: "Golos Text";
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 24px;
-    color: #313131;
-    display: flex;
-    position: relative;
-  }
-  .step_1::before,
-  .step_2::before,
-  .step_3::before,
-  .step_4::before,
-  .step_5::before,
-  .step_6::before,
-  .step_7::before {
+  .step::before {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+
     background: url("./sub_background.png") center/cover no-repeat;
     mix-blend-mode: color-burn;
   }
-  .step_sub_back {
-    position: absolute;
-    top: 0px;
-    height: 100%;
-    width: 100%;
-    mix-blend-mode: color-burn;
-    pointer-events: none;
+  .a::before,
+  .c::before,
+  .d::before,
+  .f::before,
+  .g::before {
+    height: 300px;
   }
+  .b::before,
+  .e::before {
+    background: none;
+  }
+  .b {
+    padding-top: 5px;
+  }
+  .e {
+    padding-top: 0px;
+    margin-top: -40px;
+  }
+  .slides_step {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 100%;
+  }
+  .slide_step {
+    background-image: url("./sub_background_3.png");
+    box-sizing: border-box;
+    width: 335px;
+    height: 300px;
+  }
+
   .step_number {
     width: 36px;
     height: 36px;
-    border-radius: 50%;
-    font-weight: 600;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-    margin-top: 20px;
-    margin-left: 20px;
   }
+
   .step_text {
-    width: 302px;
-    margin-top: 20px;
-    margin-left: 16px;
+    width: 243px;
   }
   .step_text_7 {
-    width: 446px;
-    margin-top: 20px;
-    margin-left: 16px;
+    width: 243px;
   }
   .plane_img {
     position: absolute;
-    width: 390px;
-    height: 240px;
-    top: 166px;
-    right: -52px;
+    width: 300px;
+    height: 182px;
+    top: -128px;
+    left: 15px;
+    z-index: 10;
+    transform: rotate(-3deg);
+  }
+  .slider-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 16px;
+  }
+
+  .dot {
+    height: 10px;
+    width: 10px;
+    margin: 0 3px;
+    background-color: #d9d9d9;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    cursor: pointer;
+  }
+  .disabled {
+    opacity: 20%;
+    pointer-events: none;
+  }
+  .active {
+    background-color: #313131;
+  }
+  .slider_step_hood {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 28px;
+  }
+  .prev_step,
+  .next_step {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #313131;
+    transition: all 0.3s ease-in-out;
+  }
+  s .prev_step img {
+    margin-right: 4px;
+  }
+  .next_step img {
+    margin-left: 4px;
   }
   footer {
     background-color: #e9ded4;
@@ -1217,26 +1221,18 @@ footer div {
 
   /* Section 3 */
   .members {
-    width: 1222px;
+    width: 335px;
     margin: 0 auto;
-    margin-top: 200px;
-  }
-
-  .members_title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    margin-top: 120px;
   }
   .members_text {
-    font-family: "Merriweather";
-    text-transform: uppercase;
-    font-weight: 400;
-    font-size: 54px;
-    color: #313131;
+    font-size: 36px;
   }
   .members_buttons {
+    display: none;
+  }
+  .members_buttons_2 {
     display: flex;
-    align-items: center;
   }
   .indicator {
     display: flex;
@@ -1291,7 +1287,6 @@ footer div {
 
   .slide_item {
     width: 394px;
-
     border-radius: 10px;
   }
   .member_photo {
@@ -1343,8 +1338,7 @@ footer div {
   .next:hover {
     background-color: #fbce51;
   }
-  .steps,
-  .members {
+  footer {
     display: none;
   }
 }
