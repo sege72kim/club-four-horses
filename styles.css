@@ -806,6 +806,7 @@ footer div {
     margin-top: -900px;
   }
 }
+
 @media (max-width: 900px) {
   /* Шапка */
   main {
@@ -885,7 +886,7 @@ footer div {
   }
   .header_composition {
     margin-top: 400px;
-    margin-left: -900px;
+    margin-left: -500px;
     height: 100%;
   }
   .sun_round {
@@ -900,9 +901,6 @@ footer div {
     right: 240px;
   }
 
-  .chess_piece_1 {
-    display: none;
-  }
   .chess_piece_2 {
     top: 480px;
     right: 410px;
@@ -965,7 +963,7 @@ footer div {
     width: 335px;
   }
   .sup_container_1_text_2 {
-    margin-top: -54px;
+    margin-top: -45px;
     grid-column: 1;
     grid-row: 3;
     width: 335px;
@@ -982,7 +980,7 @@ footer div {
   }
 
   .sup_container_1_img {
-    margin-top: -9px;
+    margin-top: -5px;
     margin-left: 0px;
     grid-column: 1;
     grid-row: 2;
@@ -1009,7 +1007,7 @@ footer div {
   .sup_container_2_text {
     font-weight: 400;
     font-size: 28px;
-    margin-top: -40px;
+    margin-top: -35px;
   }
   .sup_container_2_table {
     margin-top: 50px;
@@ -1295,5 +1293,14 @@ footer div {
   }
   .more_button {
     margin-top: 20px;
+  }
+}
+@media (max-width: 500px) {
+  .header_composition {
+    margin-left: -900px;
+  }
+
+  .chess_piece_1 {
+    display: none;
   }
 }
