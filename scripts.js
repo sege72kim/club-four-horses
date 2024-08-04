@@ -31,6 +31,7 @@ function prevSlide() {
 }
 setInterval(() => {
   nextSlide();
+  nextSlide_2();
 }, 4000);
 showSlide(currentIndex);
 
@@ -46,17 +47,14 @@ function initializeSlider() {
 
   stepElements.forEach((element, index) => {
     if (index === 2 || index === 5 || index === 6 || index === 3) {
-      // Start new slide at step 3 and 5
       slide_step = document.createElement("div");
       slide_step.className = "slide_step";
       slidesContainer.appendChild(slide_step);
     }
 
-    // Append each step element to the current slide
     slide_step.appendChild(element.cloneNode(true));
   });
 
-  // Create dots for each slide
   const totalSlides_step = document.querySelectorAll(".slide_step").length;
   const dotsContainer = document.querySelector(".slider-dots");
   for (let i = 0; i < totalSlides_step; i++) {
@@ -67,7 +65,6 @@ function initializeSlider() {
   }
 }
 
-// Инициализация слайдера
 initializeSlider();
 
 let currentSlide_step = 0;
@@ -84,12 +81,10 @@ function updateSlide(index) {
   }
   slides_step.style.transform = `translateX(-${currentSlide_step * 100}%)`;
 
-  // Update dots
   const dots = document.querySelectorAll(".dot");
   dots.forEach((dot) => dot.classList.remove("active"));
   dots[currentSlide_step].classList.add("active");
 
-  // Disable/Enable navigation buttons
   document
     .querySelector(".prev_step")
     .classList.toggle("disabled", currentSlide_step === 0);
@@ -106,7 +101,6 @@ function prevSlide_step() {
   updateSlide(currentSlide_step - 1);
 }
 
-// Add click event to dots for navigation
 document.querySelectorAll(".dot").forEach((dot) => {
   dot.addEventListener("click", function () {
     const slideIndex = parseInt(this.getAttribute("data-slide"));
@@ -114,14 +108,52 @@ document.querySelectorAll(".dot").forEach((dot) => {
   });
 });
 
-// Initialize first dot as active
 document.querySelectorAll(".dot")[0].classList.add("active");
 
-// Set initial button states
 document.querySelector(".prev_step").classList.add("disabled");
 
-document.addEventListener("DOMContentLoaded", () => {
-  const sourceDiv = document.getElementById("members_buttons");
-  const destinationDiv = document.getElementById("members_buttons_2");
-  destinationDiv.innerHTML = sourceDiv.innerHTML;
+const slideItems = document.querySelectorAll(".slide_item");
+
+const slides2 = document.querySelector(".slides_2");
+
+slideItems.forEach((item) => {
+  const newSlide = document.createElement("div");
+  newSlide.classList.add("slide_2");
+  newSlide.appendChild(item.cloneNode(true));
+  slides2.appendChild(newSlide);
 });
+
+// 3213213123
+function scrollToSection_2(sectionId_2) {
+  const section_2 = document.getElementById(sectionId_2);
+  section_2.scrollIntoView({ behavior: "smooth" });
+}
+let currentIndex_2 = 0;
+
+function showSlide_2(index_2) {
+  const slides_2 = document.querySelector(".slides_2");
+  const totalSlides_2 = document.querySelectorAll(".slide_2").length;
+
+  if (index_2 >= totalSlides_2) {
+    currentIndex_2 = 0;
+  } else if (index_2 < 0) {
+    currentIndex_2 = totalSlides_2 - 1;
+  } else {
+    currentIndex_2 = index_2;
+  }
+
+  slides_2.style.transform = `translateX(-${currentIndex_2 * 100}%)`;
+
+  document.getElementById("currentSlide_2").textContent = currentIndex_2 + 1;
+  document.getElementById("totalSlides_2").textContent = totalSlides_2;
+}
+
+function nextSlide_2() {
+  showSlide_2(currentIndex_2 + 1);
+}
+
+function prevSlide_2() {
+  showSlide_2(currentIndex_2 - 1);
+}
+
+showSlide_2(currentIndex_2);
