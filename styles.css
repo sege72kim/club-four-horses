@@ -13,6 +13,7 @@ header {
   display: inline-block;
   position: relative;
   width: 100%;
+  min-width: 1300px;
   overflow: hidden;
 }
 .header_main_container {
@@ -205,6 +206,7 @@ header {
   background-color: #f54932;
   height: 60px;
   width: 100%;
+  min-width: 1300px;
   margin: 0 auto;
   display: flex;
   overflow: hidden;
@@ -214,6 +216,7 @@ header {
 .marquee_2 {
   background-color: #f54932;
   height: 60px;
+  min-width: 1300px;
   width: 100%;
   margin: 0 auto;
   display: flex;
@@ -497,10 +500,10 @@ header {
 }
 .plane_img {
   position: absolute;
-  width: 400px;
+  width: 390px;
   height: 240px;
   top: 166px;
-  right: -62px;
+  right: -52px;
 }
 footer {
   background-color: #e9ded4;
@@ -646,4 +649,16 @@ footer div {
 .prev:hover,
 .next:hover {
   background-color: #fbce51;
+}
+@media (max-width: 1222px) {
+  .members,
+  .support,
+  .steps,
+  header,
+  .marquee,
+  .marquee_2,
+  footer {
+    transform: scale(0.8);
+    transform-origin: top left;
+  }
 }
