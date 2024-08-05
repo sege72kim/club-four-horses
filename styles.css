@@ -30,12 +30,14 @@ header {
 .logopng_container {
   display: flex;
   column-gap: 1px;
+  z-index: 10;
 }
 .logopng {
   width: 22px;
   height: 31px;
 }
 .logotxt_container {
+  z-index: 10;
   font-family: "Golos Text";
   font-weight: 700;
   font-size: 16.65px;
@@ -973,7 +975,7 @@ footer div {
     text-align: start;
   }
   .sup_container_1_text_2_2 {
-    margin-top: -134px;
+    margin-top: -143px;
     color: #f54932;
     font-weight: 700;
     text-align: start;
@@ -995,7 +997,7 @@ footer div {
   }
   .sup_container_2_img {
     margin-left: 0px;
-    height: 440px;
+    height: 460px;
     width: 375px;
     margin-top: -80px;
     position: relative;
