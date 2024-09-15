@@ -38,4 +38,4 @@ The Club Four Horses website is built using pure HTML, CSS, and JavaScript. No t
 
 Open `index.html` in any modern web browser to see the site in action.
 
-To view the website, you can visit the following link: [https://sege72kim.github.io/club-four-horses-website/](https://sege72kim.github.io/club-four-horses-website/)
+To view the website, you can visit the following link: [https://sege72kim.github.io/club-four-horses/](https://sege72kim.github.io/club-four-horses/)
